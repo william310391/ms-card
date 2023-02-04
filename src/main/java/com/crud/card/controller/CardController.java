@@ -23,15 +23,14 @@ public class CardController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
     @PostMapping("/save")
-    public ResponseEntity<ServiceResponse> save(@RequestBody Card card){
+    public ResponseEntity<ServiceResponse> save(@RequestBody Card card) {
         ServiceResponse serviceResponse = new ServiceResponse();
         int result = iCardService.save(card);
-        if(result==1){
+        if (result == 1) {
             serviceResponse.setMessage("Item saved with success");
         }
         return new ResponseEntity<>(serviceResponse, HttpStatus.OK);
     }
-
 
     @PostMapping("/update")
     public ResponseEntity<ServiceResponse> update(@RequestBody Card card){
